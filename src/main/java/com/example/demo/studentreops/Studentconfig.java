@@ -18,18 +18,19 @@ public class Studentconfig {
         return args -> {
 
            Student p= new Student(
-                    "basheer",
-                    "email.comp",
-                    21,
-                    21
+                    "chaithanya",
+                    "chaiths",
+                    2002,
+                   22
+
             );
 
 
            Student j= new Student(
-                    "jamal",
-                    "e",
-                    21,
-                    299
+                    "pretham",
+                    "bachira@gmail.com",
+                    2003,
+                   21
             );
 
             repos.saveAll(List.of(p,j));

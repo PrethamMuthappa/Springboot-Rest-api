@@ -3,6 +3,9 @@ package com.example.demo.studentModel;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 
 @Getter
 @Setter
@@ -30,12 +33,13 @@ public class Student{
     @Column(name = "age")
     private Integer age;
 
-    public Student(String name, String email, Integer dob, Integer age) {
+    public Student(String name, String email, Integer dob,Integer age) {
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
+        this.age=age;
     }
+
 }
 
 

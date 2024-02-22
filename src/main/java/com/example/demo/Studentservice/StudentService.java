@@ -20,5 +20,10 @@ public class StudentService {
     public List<Student> getnames(){
         return studentRepos.findAll();
     }
+
+    public void addnewNames(Student student) {
+       // studentRepos.save(student);
+        System.out.println(student);
+    }
 }
 

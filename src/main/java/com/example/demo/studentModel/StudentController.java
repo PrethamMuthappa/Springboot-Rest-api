@@ -3,9 +3,8 @@ package com.example.demo.studentModel;
 
 import com.example.demo.Studentservice.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -20,4 +19,10 @@ public class StudentController {
     public List<Student> getnames(){
         return studentService.getnames();
     }
+
+    @PostMapping("/students{student}")
+    public void registerstudent(@RequestBody Student student){
+        studentService.addnewNames(student);
+    }
+
 }
