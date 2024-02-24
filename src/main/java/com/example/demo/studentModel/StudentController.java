@@ -37,6 +37,10 @@ public class StudentController {
         studentService.deleteid(id);
     }
 
+    @PutMapping("students/update{id}")
+    public void update(int id,@RequestParam(required = false) String name,@RequestParam(required = false) String email){
+        studentService.update(id,name,email);
+    }
 
 
 }
