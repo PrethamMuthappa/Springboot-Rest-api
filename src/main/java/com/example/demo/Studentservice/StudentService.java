@@ -5,7 +5,9 @@ import com.example.demo.studentModel.Student;
 import com.example.demo.studentreops.StudentRepos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -22,8 +24,21 @@ public class StudentService {
     }
 
     public void addnewNames(Student student) {
-       // studentRepos.save(student);
-        System.out.println(student);
+        Optional<Student> studentOptional=studentRepos.findStudentByEmail(student.getEmail());
+        if(studentOptional.isPresent()){
+            throw new IllegalStateException("email already taken");
+        }
+        studentRepos.save(student);
+    }
+
+    public List<Student> findc(String findstudents){
+
+        List<Student>optionalStudent=studentRepos.findStudentByNameStartingWith(findstudents);
+        if(optionalStudent.isEmpty()){
+           throw new IllegalStateException("name not found");
+        }
+        return optionalStudent;
+
     }
 }
 
