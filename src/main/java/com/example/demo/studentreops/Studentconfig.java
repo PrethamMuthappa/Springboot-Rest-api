@@ -18,7 +18,7 @@ public class Studentconfig {
         return args -> {
 
            Student p= new Student(
-                    "chaithanya",
+                    "json vooresh",
                     "chaiths",
                     2002,
                    22

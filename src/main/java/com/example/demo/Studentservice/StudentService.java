@@ -40,5 +40,13 @@ public class StudentService {
         return optionalStudent;
 
     }
+
+    public void deleteid(long id) {
+        boolean b=studentRepos.existsById(id);
+        if(!b){
+            throw new IllegalStateException("id does not exist");
+        }
+        studentRepos.deleteById(id);
+    }
 }
 

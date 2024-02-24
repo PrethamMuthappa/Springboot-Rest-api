@@ -31,5 +31,12 @@ public class StudentController {
         return studentService.findc(String.valueOf(findstudents));
     }
 
+    //for deleting
+    @DeleteMapping("/students/delete{id}")
+    public void deletestudent(@RequestParam int id){
+        studentService.deleteid(id);
+    }
+
+
 
 }
