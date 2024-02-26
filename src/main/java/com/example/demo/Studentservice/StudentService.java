@@ -68,5 +68,10 @@ public class StudentService {
             student.setEmail(email);
         }
     }
+
+    public void formdata(Student student) {
+        System.out.println(student);
+        studentRepos.save(student);
+    }
 }
 
