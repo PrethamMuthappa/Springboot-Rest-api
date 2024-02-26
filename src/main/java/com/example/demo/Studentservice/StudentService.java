@@ -70,6 +70,10 @@ public class StudentService {
     }
 
     public void formdata(Student student) {
+        Optional<Student>optionalStudent=studentRepos.findStudentByEmail(student.getEmail());
+        if(optionalStudent.isPresent()){
+            throw new IllegalStateException("email already taken");
+        }
         System.out.println(student);
         studentRepos.save(student);
     }
