@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user name</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      width: 20px;
+      white-space: nowrap;
+
+    }
+
+    td {
+      word-wrap: break-word;
+    }
+    th {
+      background-color: #f2f2f2;
+      border-collapse: separate;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <table class="responsive-table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Age</th>
+
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr th:each ="student: ${lists}">
+      <td th:text="${student.id}">
+      </td>
+      <td th:text="${student.name}">
+      </td>
+      <td th:text="${student.email}">
+      </td>
+      <td th:text="${student.dob}">
+      </td>
+      <td th:text="${student.age}">
+      </td>
+    </tr>
+    </tbody>
+    
+  </table>
+</div>
+
+</body>
+</html>

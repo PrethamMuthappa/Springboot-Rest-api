@@ -1,6 +1,5 @@
 package com.example.demo.studentModel;
 
-
 import com.example.demo.Studentservice.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -17,9 +16,13 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
+
     @GetMapping("/names")
-    public List<Student> getnames(){
-        return studentService.getnames();
+    public ModelAndView getnames(Model model){
+        ModelAndView ModelAndView = new ModelAndView();
+        ModelAndView.setViewName("names");
+        model.addAttribute("lists",studentService.getnames());
+        return ModelAndView;
     }
 
     @PostMapping("/students{student}")
